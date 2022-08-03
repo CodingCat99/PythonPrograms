@@ -1,8 +1,9 @@
-import random as rand
+from multiprocessing.sharedctypes import Value
+import random as rng
 
 # Main Function
 def ranGen(min, max, willWrite: bool, willRound: bool, isStr: bool):
-    genRanNum = rand.uniform(min, max)
+    genRanNum = rng.uniform(min, max)
     if willRound == True:
         rounded_genRanNum = round(genRanNum)
         genRanNum = rounded_genRanNum
@@ -19,4 +20,4 @@ def ranGen(min, max, willWrite: bool, willRound: bool, isStr: bool):
         return genRanNum
     else:
         return genRanNum
-ranGen(1,10000,True,True,False)
+ranGen(1,10,True,True,False)
